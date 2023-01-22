@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\ApiControllers\Auth\UserController;
 use App\Http\ApiControllers\Auth\LoginController;
 use App\Http\ApiControllers\Auth\LogoutController;
+use App\Http\ApiControllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,7 @@ use App\Http\ApiControllers\Auth\LogoutController;
 */
 
 Route::post('/auth/login', LoginController::class);
+Route::post('/auth/register', RegisterController::class);
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::get('/auth/user', UserController::class);
